@@ -9,38 +9,260 @@
     "image": "assets/start-time-awards.jpg",
     "days": [
       {
-        "id": "fri", "en": "Friday", "ko": "11.13 (금)",
+        "id": "fri",
+        "en": "Friday",
+        "ko": "11.13 (금)",
         "rows": [
-          { "ko": "남성 오픈 싱글 / 남성 어댑티브", "en": "MEN OPEN / MEN ADAPTIVE", "start": "8:30 – 11:20", "awards": ["14:20 (MEN ADAPTIVE) SAT", "14:30 (MEN OPEN) SAT"] },
-          { "ko": "남성 오픈 더블", "en": "DOUBLES MEN", "start": "11:50 – 14:50", "awards": ["19:00 SUN"] },
-          { "ko": "여성 오픈 더블", "en": "DOUBLES WOMEN", "start": "15:20 – 16:30", "awards": ["12:45 SUN"] },
-          { "ko": "여성 오픈 싱글 / 여성 어댑티브", "en": "WOMEN OPEN / WOMEN ADAPTIVE", "start": "16:40 – 17:10", "awards": ["14:05 (WOMEN ADAPTIVE) SUN", "14:15 (WOMEN OPEN) SUN"] },
-          { "ko": "혼성 더블", "en": "DOUBLES MIXED", "start": "17:50 – 20:20", "awards": ["19:30 SAT"] }
+          {
+            "ko": "남성 오픈 싱글 / 남성 어댑티브",
+            "en": "MEN OPEN / MEN ADAPTIVE",
+            "start": "8:30 – 11:20",
+            "awards": [
+              "14:20 (MEN ADAPTIVE) SAT",
+              "14:30 (MEN OPEN) SAT"
+            ]
+          },
+          {
+            "ko": "남성 오픈 더블",
+            "en": "DOUBLES MEN",
+            "start": "11:50 – 14:50",
+            "awards": [
+              "19:00 SUN"
+            ]
+          },
+          {
+            "ko": "여성 오픈 더블",
+            "en": "DOUBLES WOMEN",
+            "start": "15:20 – 16:30",
+            "awards": [
+              "12:45 SUN"
+            ]
+          },
+          {
+            "ko": "여성 오픈 싱글 / 여성 어댑티브",
+            "en": "WOMEN OPEN / WOMEN ADAPTIVE",
+            "start": "16:40 – 17:10",
+            "awards": [
+              "14:05 (WOMEN ADAPTIVE) SUN",
+              "14:15 (WOMEN OPEN) SUN"
+            ]
+          },
+          {
+            "ko": "혼성 더블",
+            "en": "DOUBLES MIXED",
+            "start": "17:50 – 20:20",
+            "awards": [
+              "19:30 SAT"
+            ]
+          }
         ]
       },
       {
-        "id": "sat", "en": "Saturday", "ko": "11.14 (토)",
+        "id": "sat",
+        "en": "Saturday",
+        "ko": "11.14 (토)",
         "rows": [
-          { "ko": "남성 오픈 싱글 / 남성 어댑티브", "en": "MEN OPEN / MEN ADAPTIVE", "start": "8:30 – 12:40", "awards": ["14:20 (MEN ADAPTIVE)", "14:30 (MEN OPEN)"] },
-          { "ko": "여성 프로 더블", "en": "DOUBLES WOMEN PRO", "start": "13:10 – 13:30", "awards": ["15:45"] },
-          { "ko": "여성 프로 싱글", "en": "WOMEN PRO", "start": "13:40 – 14:00", "awards": ["15:45"] },
-          { "ko": "혼성 더블", "en": "DOUBLES MIXED", "start": "14:30 – 17:40", "awards": ["19:30"] },
-          { "ko": "남성 프로 더블", "en": "DOUBLES MEN PRO", "start": "18:20 – 19:20", "awards": ["22:00"] },
-          { "ko": "남성 프로 싱글", "en": "MEN PRO", "start": "19:30 – 20:20", "awards": ["22:00"] }
+          {
+            "ko": "남성 오픈 싱글 / 남성 어댑티브",
+            "en": "MEN OPEN / MEN ADAPTIVE",
+            "start": "8:30 – 12:40",
+            "awards": [
+              "14:20 (MEN ADAPTIVE)",
+              "14:30 (MEN OPEN)"
+            ]
+          },
+          {
+            "ko": "여성 프로 더블",
+            "en": "DOUBLES WOMEN PRO",
+            "start": "13:10 – 13:30",
+            "awards": [
+              "15:45"
+            ]
+          },
+          {
+            "ko": "여성 프로 싱글",
+            "en": "WOMEN PRO",
+            "start": "13:40 – 14:00",
+            "awards": [
+              "15:45"
+            ]
+          },
+          {
+            "ko": "혼성 더블",
+            "en": "DOUBLES MIXED",
+            "start": "14:30 – 17:40",
+            "awards": [
+              "19:30"
+            ]
+          },
+          {
+            "ko": "남성 프로 더블",
+            "en": "DOUBLES MEN PRO",
+            "start": "18:20 – 19:20",
+            "awards": [
+              "22:00"
+            ]
+          },
+          {
+            "ko": "남성 프로 싱글",
+            "en": "MEN PRO",
+            "start": "19:30 – 20:20",
+            "awards": [
+              "22:00"
+            ]
+          }
         ]
       },
       {
-        "id": "sun", "en": "Sunday", "ko": "11.15 (일)",
+        "id": "sun",
+        "en": "Sunday",
+        "ko": "11.15 (일)",
         "rows": [
-          { "ko": "여성 오픈 더블", "en": "DOUBLES WOMEN", "start": "8:30 – 11:00", "awards": ["12:45"] },
-          { "ko": "여성 오픈 싱글 / 여성 어댑티브", "en": "WOMEN OPEN / WOMEN ADAPTIVE", "start": "11:10 – 12:30", "awards": ["14:05 (WOMEN ADAPTIVE)", "14:15 (WOMEN OPEN)"] },
-          { "ko": "남성 오픈 더블", "en": "DOUBLES MEN", "start": "13:10 – 17:20", "awards": ["19:00"] },
-          { "ko": "남성 릴레이", "en": "RELAY MEN", "start": "17:50 – 18:20", "awards": ["22:00"] },
-          { "ko": "혼성 릴레이", "en": "RELAY MIXED", "start": "18:50 – 19:40", "awards": ["22:00"] },
-          { "ko": "여성 릴레이", "en": "RELAY WOMEN", "start": "20:10 – 20:20", "awards": ["22:00"] }
+          {
+            "ko": "여성 오픈 더블",
+            "en": "DOUBLES WOMEN",
+            "start": "8:30 – 11:00",
+            "awards": [
+              "12:45"
+            ]
+          },
+          {
+            "ko": "여성 오픈 싱글 / 여성 어댑티브",
+            "en": "WOMEN OPEN / WOMEN ADAPTIVE",
+            "start": "11:10 – 12:30",
+            "awards": [
+              "14:05 (WOMEN ADAPTIVE)",
+              "14:15 (WOMEN OPEN)"
+            ]
+          },
+          {
+            "ko": "남성 오픈 더블",
+            "en": "DOUBLES MEN",
+            "start": "13:10 – 17:20",
+            "awards": [
+              "19:00"
+            ]
+          },
+          {
+            "ko": "남성 릴레이",
+            "en": "RELAY MEN",
+            "start": "17:50 – 18:20",
+            "awards": [
+              "22:00"
+            ]
+          },
+          {
+            "ko": "혼성 릴레이",
+            "en": "RELAY MIXED",
+            "start": "18:50 – 19:40",
+            "awards": [
+              "22:00"
+            ]
+          },
+          {
+            "ko": "여성 릴레이",
+            "en": "RELAY WOMEN",
+            "start": "20:10 – 20:20",
+            "awards": [
+              "22:00"
+            ]
+          }
         ]
       }
     ]
+  },
+  "course": {
+    "image": "assets/course-map.jpg",
+    "pdf": "https://hyroxsouthkorea.com/wp-content/uploads/2026/11/13-15-November-1.pdf",
+    "points": [
+      [
+        "러닝 방향",
+        "바깥 런 코스를 반시계 방향으로 돌아요. 위쪽은 오른쪽 → 왼쪽, 아래쪽은 왼쪽 → 오른쪽이에요."
+      ],
+      [
+        "출발",
+        "왼쪽 아래 레드불 스타트 터널에서 출발해요. 그래서 러닝 1만 591 m로 짧아요."
+      ],
+      [
+        "바퀴 세기 (싱글·더블)",
+        "IN 아치를 처음 보면 지나쳐 한 바퀴 더 돌고, 두 번째로 보면 들어가요."
+      ],
+      [
+        "록스존",
+        "왼쪽 아래 IN으로 들어가 안쪽 통로를 따라 스테이션으로 가고, 오른쪽 아래 OUT으로 나와요. 앞쪽 스테이션(스키에르그, 슬레드)일수록 OUT까지 걷는 거리가 길어요."
+      ],
+      [
+        "급수",
+        "안쪽 통로에 3곳: 슬레드 푸시 앞, 슬레드 풀과 버피 사이, 로잉 앞."
+      ],
+      [
+        "의료팀",
+        "버피 브로드 점프 스테이션 앞(안쪽 통로)."
+      ],
+      [
+        "결승",
+        "08 월볼 바로 위가 결승선이에요."
+      ],
+      [
+        "육교 횡단",
+        "위쪽 런 코스 두 곳에 관람객 육교 횡단 구간이 있어요."
+      ],
+      [
+        "편의시설",
+        "2층(LEVEL 2): 물품 보관소, 탈의실, 선수 체크인. 리커버리 존은 오른쪽 위, 결승선 옆이에요."
+      ]
+    ],
+    "segments": [
+      [
+        1,
+        591,
+        "스키에르그",
+        193
+      ],
+      [
+        2,
+        952,
+        "슬레드 푸시",
+        109
+      ],
+      [
+        3,
+        952,
+        "슬레드 풀",
+        259
+      ],
+      [
+        4,
+        952,
+        "버피 브로드 점프",
+        169
+      ],
+      [
+        5,
+        952,
+        "로잉",
+        171
+      ],
+      [
+        6,
+        952,
+        "파머스 캐리",
+        188
+      ],
+      [
+        7,
+        952,
+        "샌드백 런지",
+        193
+      ],
+      [
+        8,
+        952,
+        "월볼",
+        167
+      ]
+    ],
+    "segmentsNote": "거리는 공식 코스 안내 영상을 보고 잰 추정값이에요."
   },
   "videos": [
     {
@@ -61,8 +283,20 @@
     }
   ],
   "links": [
-    { "label": "Start List", "desc": "개인별 출발 시간 조회", "url": "https://startlist.hyrox.com/" },
-    { "label": "Results", "desc": "대회 결과", "url": "https://results.hyrox.com/" },
-    { "label": "@hyroxkor", "desc": "HYROX Korea 인스타그램", "url": "https://www.instagram.com/hyroxkor/" }
+    {
+      "label": "Start List",
+      "desc": "개인별 출발 시간 조회",
+      "url": "https://startlist.hyrox.com/"
+    },
+    {
+      "label": "Results",
+      "desc": "대회 결과",
+      "url": "https://results.hyrox.com/"
+    },
+    {
+      "label": "@hyroxkor",
+      "desc": "HYROX Korea 인스타그램",
+      "url": "https://www.instagram.com/hyroxkor/"
+    }
   ]
 }

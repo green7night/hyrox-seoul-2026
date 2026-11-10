@@ -68,6 +68,14 @@ details { margin-top: 16px; }
 summary { cursor: pointer; color: var(--yellow); text-transform: uppercase; }
 details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
 
+/* 코스 맵 */
+.map { display: block; margin-top: 16px; }
+.map img { display: block; width: 100%; height: auto; }
+.points { display: grid; grid-template-columns: 180px minmax(0, 1fr); margin: 20px 0 0; }
+.points dt, .points dd { margin: 0; padding: 10px 6px; border-top: 1px solid var(--thead); }
+.points dt { color: var(--yellow); font-weight: 500; }
+.seg .tr { grid-template-columns: 60px 110px minmax(0, 1fr) 100px; }
+
 /* 영상 */
 .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px; }
 .video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--bg); }
@@ -89,9 +97,12 @@ details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
   .logo { font-size: 32px; }
   .pagehead h1 { font-size: 34px; line-height: 48px; }
   .box h2 { font-size: 24px; line-height: 28px; }
-  .tr { grid-template-columns: minmax(0, 1fr) 96px; row-gap: 4px; }
-  .tr > :nth-child(3) { grid-column: 1 / -1; }
-  .th > :nth-child(3) { display: none; }
+  #schedule .tr { grid-template-columns: minmax(0, 1fr) 96px; row-gap: 4px; }
+  #schedule .tr > :nth-child(3) { grid-column: 1 / -1; }
+  #schedule .th > :nth-child(3) { display: none; }
+  .points { grid-template-columns: 1fr; }
+  .points dd { border-top: 0; padding-top: 0; }
+  .seg .tr { grid-template-columns: 44px 72px minmax(0, 1fr) 72px; column-gap: 8px; font-size: 14px; }
   .td .aw { color: var(--muted); font-size: 14px; }
   .td .aw::before { content: "시상식 "; }
   .td .aw span { display: inline; }
@@ -105,6 +116,7 @@ details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
 
 <nav class="nav" aria-label="섹션 이동"><div class="inner">
   <a href="#schedule">출발 시간대 · 시상식</a>
+  <a href="#course">코스 맵</a>
   <a href="#run">런 코스 설명</a>
   <a href="#links">링크</a>
 </div></nav>
@@ -120,6 +132,19 @@ details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
     </div>
     <details><summary>원본 이미지 보기</summary><img id="schedImg" alt="디비전별 출발 시간대와 시상식 일정 원본 이미지"></details>
     <p class="note">출처: <a id="schedSrc" target="_blank" rel="noopener">@hyroxkor</a></p>
+  </section>
+
+  <section class="box" id="course">
+    <h2>코스 맵</h2>
+    <div class="info"><span>KINTEX</span><span class="sep"></span><span>러닝 <i id="runTotal"></i> · 록스존 <i id="roxTotal"></i></span></div>
+    <a class="map" id="mapLink" target="_blank" rel="noopener"><img id="mapImg" alt="HYROX 서울 코스 맵: 바깥 런 코스와 안쪽 스테이션 01~08 배치"></a>
+    <p class="note">이미지를 누르면 크게 열려요 · <a id="mapPdf" target="_blank" rel="noopener">공식 PDF</a></p>
+    <dl class="points" id="points"></dl>
+    <div class="table seg" role="table">
+      <div class="tr th" role="row"><span>Run</span><span>Distance</span><span>Next Station</span><span>Roxzone</span></div>
+      <div id="segRows"></div>
+    </div>
+    <p class="note" id="segNote"></p>
   </section>
 
   <section class="box" id="run">
@@ -160,6 +185,18 @@ fetch("data.json").then(r => r.json()).then(data => {
   show(todayIdx);
   document.getElementById("schedImg").src = schedule.image;
   document.getElementById("schedSrc").href = schedule.source;
+
+  const c = data.course;
+  document.getElementById("mapImg").src = c.image;
+  document.getElementById("mapLink").href = c.image;
+  document.getElementById("mapPdf").href = c.pdf;
+  document.getElementById("points").innerHTML = c.points.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+  const fmt = n => n.toLocaleString("en-US") + " m";
+  document.getElementById("segRows").innerHTML = c.segments.map(([n, d, st, rx]) => `
+    <div class="tr td" role="row"><span>${n}</span><span>${fmt(d)}</span><span>${esc(st)}</span><span>${fmt(rx)}</span></div>`).join("");
+  document.getElementById("runTotal").textContent = fmt(c.segments.reduce((a, r) => a + r[1], 0));
+  document.getElementById("roxTotal").textContent = fmt(c.segments.reduce((a, r) => a + r[3], 0));
+  document.getElementById("segNote").textContent = c.segmentsNote;
 
   document.getElementById("videos").innerHTML = videos.map(v => `
     <figure class="video" style="margin:0">
