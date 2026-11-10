@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HYROX SEOUL 2026</title>
+<style>
+/* startlist.hyrox.com 화면에서 측정한 값: 검정 바탕, #ffed00, 16px/22.86px, 패널 #111, 표 머리 #2c2c2c */
+:root {
+  --bg: #000;
+  --panel: #111;
+  --thead: #2c2c2c;
+  --row: #1d1d1d;
+  --row-alt: #171717;
+  --fg: #fff;
+  --muted: #8e8e8e;
+  --yellow: #ffed00;
+  --font: "Brutal Type", "Helvetica Neue", Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 16px; line-height: 22.86px; }
+a { color: inherit; }
+.inner { max-width: 1170px; margin: 0 auto; padding-inline: 16px; }
+
+/* 헤더 */
+.brand { border-bottom: 2px solid var(--yellow); }
+.brand .inner { display: flex; align-items: center; gap: 120px; padding-block: 26px; }
+.logo { font-weight: 700; font-size: 44px; letter-spacing: .48em; line-height: 36px; }
+.brand .sub { color: var(--yellow); font-weight: 800; text-transform: uppercase; }
+.pagehead .inner { padding-block: 6px 20px; }
+.pagehead h1 { margin: 0; font-weight: 700; font-size: 40px; line-height: 60px; text-transform: uppercase; }
+.pagehead p { margin: 0; color: var(--muted); }
+
+/* 섹션 이동 */
+.nav { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--thead); }
+.nav .inner { display: flex; gap: 4px; overflow-x: auto; }
+.nav a { padding: 14px 15px 12px; text-decoration: none; text-transform: uppercase; white-space: nowrap; border-bottom: 2px solid transparent; }
+.nav a:hover, .nav a:focus-visible { color: var(--yellow); border-bottom-color: var(--yellow); outline: none; }
+
+/* 패널 */
+main { display: grid; gap: 24px; padding-block: 24px 40px; }
+.box { max-width: 1170px; width: 100%; margin: 0 auto; background: var(--panel); padding: 18px 15px 22px; scroll-margin-top: 56px; }
+.box h2 { margin: 0 0 20px; font-weight: 500; font-size: 30px; line-height: 33px; text-wrap: balance; }
+.info { background: var(--bg); padding: 10px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; line-height: 24px; }
+.info .sep { width: 1px; align-self: stretch; background: var(--fg); }
+.info i { font-style: italic; }
+
+/* 요일 탭 */
+.tabs { display: flex; gap: 8px; margin-top: 20px; }
+.tabs button { font: inherit; text-transform: uppercase; background: var(--bg); color: var(--fg); border: 1px solid var(--yellow); padding: 10px 15px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--yellow); color: var(--bg); }
+.tabs button:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+/* 표 */
+.table { margin-top: 16px; }
+.tr { display: grid; grid-template-columns: minmax(0, 1.4fr) 150px minmax(0, 1fr); column-gap: 12px; align-items: center; padding: 9px 6px; }
+.th { background: var(--thead); border-bottom: 1px solid var(--fg); font-weight: 700; padding-block: 8px; }
+.td { background: var(--row); font-variant-numeric: tabular-nums; }
+.td:nth-child(odd) { background: var(--row-alt); }
+.td .en { color: var(--yellow); font-weight: 500; }
+.td .ko { color: var(--muted); font-size: 14px; }
+.td .aw span { display: block; }
+.note { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+.note a { color: var(--yellow); }
+details { margin-top: 16px; }
+summary { cursor: pointer; color: var(--yellow); text-transform: uppercase; }
+details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
+
+/* 영상 */
+.videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px; }
+.video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--bg); }
+.video h3 { margin: 12px 0 0; font-size: 16px; font-weight: 700; }
+.video p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+
+/* 링크 */
+.links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; }
+.links a { display: block; text-decoration: none; background: var(--bg); border: 1px solid var(--thead); padding: 14px 15px; }
+.links a:hover, .links a:focus-visible { border-color: var(--yellow); outline: none; }
+.links b { display: block; color: var(--yellow); text-transform: uppercase; }
+.links span { color: var(--muted); font-size: 14px; }
+
+.foot { border-top: 2px solid var(--thead); background: #0d0b0b; }
+.foot .inner { padding-block: 16px; color: #777; font-size: 12.8px; line-height: 18.29px; }
+
+@media (max-width: 640px) {
+  .brand .inner { gap: 32px; padding-block: 18px; }
+  .logo { font-size: 32px; }
+  .pagehead h1 { font-size: 34px; line-height: 48px; }
+  .box h2 { font-size: 24px; line-height: 28px; }
+  .tr { grid-template-columns: minmax(0, 1fr) 96px; row-gap: 4px; }
+  .tr > :nth-child(3) { grid-column: 1 / -1; }
+  .th > :nth-child(3) { display: none; }
+  .td .aw { color: var(--muted); font-size: 14px; }
+  .td .aw::before { content: "시상식 "; }
+  .td .aw span { display: inline; }
+  .td .aw span + span::before { content: " · "; }
+}
+</style>
+</head>
+<body>
+<header class="brand"><div class="inner"><div class="logo">HYROX</div><div class="sub">Seoul 2026</div></div></header>
+<div class="pagehead"><div class="inner"><h1>Race Info</h1><p id="event"></p></div></div>
+
+<nav class="nav" aria-label="섹션 이동"><div class="inner">
+  <a href="#schedule">출발 시간대 · 시상식</a>
+  <a href="#run">런 코스 설명</a>
+  <a href="#links">링크</a>
+</div></nav>
+
+<main>
+  <section class="box" id="schedule">
+    <h2>디비전별 출발 시간대 · 시상식</h2>
+    <div class="info"><span>Start Time Range</span><span class="sep"></span><span>개인별 출발 시간은 <i>Start List</i>에서 조회</span></div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="table" role="table">
+      <div class="tr th" role="row"><span>Race Category</span><span>Start Time</span><span>Awards</span></div>
+      <div id="rows"></div>
+    </div>
+    <details><summary>원본 이미지 보기</summary><img id="schedImg" alt="디비전별 출발 시간대와 시상식 일정 원본 이미지"></details>
+    <p class="note">출처: <a id="schedSrc" target="_blank" rel="noopener">@hyroxkor</a></p>
+  </section>
+
+  <section class="box" id="run">
+    <h2>런 코스 설명 영상</h2>
+    <div class="videos" id="videos"></div>
+  </section>
+
+  <section class="box" id="links">
+    <h2>링크</h2>
+    <div class="links" id="linkList"></div>
+  </section>
+</main>
+
+<footer class="foot"><div class="inner">자료 출처: HYROX Korea (@hyroxkor) · 개인 정리용 페이지</div></footer>
+
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+fetch("data.json").then(r => r.json()).then(data => {
+  const { event, schedule, videos, links } = data;
+  document.getElementById("event").textContent = `${event.dates} · ${event.venue}`;
+
+  // 요일 탭: 대회 기간 중이면 오늘 요일을 먼저 연다
+  const tabs = document.getElementById("tabs");
+  const rows = document.getElementById("rows");
+  const todayIdx = { 13: 0, 14: 1, 15: 2 }[new Date().getMonth() === 10 ? new Date().getDate() : 0] ?? 0;
+  const show = i => {
+    [...tabs.children].forEach((b, j) => b.setAttribute("aria-selected", i === j));
+    rows.innerHTML = schedule.days[i].rows.map(r => `
+      <div class="tr td" role="row">
+        <span><span class="en">${esc(r.en)}</span><br><span class="ko">${esc(r.ko)}</span></span>
+        <span>${esc(r.start)}</span>
+        <span class="aw">${r.awards.map(a => `<span>${esc(a)}</span>`).join("")}</span>
+      </div>`).join("");
+  };
+  tabs.innerHTML = schedule.days.map(d => `<button role="tab" type="button">${d.en}<br><small>${d.ko}</small></button>`).join("");
+  [...tabs.children].forEach((b, i) => b.addEventListener("click", () => show(i)));
+  show(todayIdx);
+  document.getElementById("schedImg").src = schedule.image;
+  document.getElementById("schedSrc").href = schedule.source;
+
+  document.getElementById("videos").innerHTML = videos.map(v => `
+    <figure class="video" style="margin:0">
+      <video controls playsinline preload="metadata" poster="${v.poster}" src="${v.src}"></video>
+      <h3>${esc(v.title)} <span style="color:var(--muted);font-weight:400">${v.length}</span></h3>
+      <p>${esc(v.en)} · <a href="${v.source}" target="_blank" rel="noopener">원본</a></p>
+    </figure>`).join("");
+
+  document.getElementById("linkList").innerHTML = links.map(l => `
+    <a href="${l.url}" target="_blank" rel="noopener"><b>${esc(l.label)}</b><span>${esc(l.desc)}</span></a>`).join("");
+});
+</script>
+</body>
+</html>
