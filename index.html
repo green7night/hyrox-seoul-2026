@@ -75,6 +75,10 @@ details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
 .points dt, .points dd { margin: 0; padding: 10px 6px; border-top: 1px solid var(--thead); }
 .points dt { color: var(--yellow); font-weight: 500; }
 .seg .tr { grid-template-columns: 60px 110px minmax(0, 1fr) 100px; }
+.points dd .go { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 4px; }
+.points dd .go a { color: var(--yellow); text-decoration: none; text-transform: uppercase; font-size: 14px; }
+.points dd .go a::before { content: "➝ "; }
+.points dd .go a:hover { text-decoration: underline; }
 
 /* 영상 */
 .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px; }
@@ -115,6 +119,7 @@ details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
 <div class="pagehead"><div class="inner"><h1>Race Info</h1><p id="event"></p></div></div>
 
 <nav class="nav" aria-label="섹션 이동"><div class="inner">
+  <a href="#guide">참가자 안내</a>
   <a href="#schedule">출발 시간대 · 시상식</a>
   <a href="#course">코스 맵</a>
   <a href="#run">런 코스 설명</a>
@@ -122,6 +127,12 @@ details img { display: block; width: 100%; max-width: 640px; margin-top: 12px; }
 </div></nav>
 
 <main>
+  <section class="box" id="guide">
+    <h2>참가자 안내</h2>
+    <div class="info"><span>Race Day Checklist</span><span class="sep"></span><span id="guideSrc"></span></div>
+    <dl class="points" id="guideItems"></dl>
+  </section>
+
   <section class="box" id="schedule">
     <h2>디비전별 출발 시간대 · 시상식</h2>
     <div class="info"><span>Start Time Range</span><span class="sep"></span><span>개인별 출발 시간은 <i>Start List</i>에서 조회</span></div>
@@ -185,6 +196,12 @@ fetch("data.json").then(r => r.json()).then(data => {
   show(todayIdx);
   document.getElementById("schedImg").src = schedule.image;
   document.getElementById("schedSrc").href = schedule.source;
+
+  const g = data.guide;
+  document.getElementById("guideSrc").textContent = g.source;
+  document.getElementById("guideItems").innerHTML = g.items.map(([k, v, ls]) => `
+    <dt>${esc(k)}</dt>
+    <dd>${esc(v)}<span class="go">${ls.map(([t, u]) => `<a href="${u}" target="_blank" rel="noopener">${esc(t)}</a>`).join("")}</span></dd>`).join("");
 
   const c = data.course;
   document.getElementById("mapImg").src = c.image;

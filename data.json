@@ -4,6 +4,131 @@
     "dates": "2026.11.13 – 11.15",
     "venue": "KINTEX (Korea International Exhibition Center)"
   },
+  "guide": {
+    "source": "HYROX Korea 참가자 안내 메일 (11.10)",
+    "items": [
+      [
+        "대회장",
+        "킨텍스 2층 Hall 8B가 메인 입구예요. 같은 날 행사가 2개 열려 주변이 붐비니 일찍 도착하세요.",
+        [
+          [
+            "오시는 길",
+            "https://www.kintex.com/web/ko/html/service/parking_transportation.do"
+          ],
+          [
+            "주차 안내",
+            "https://www.kintex.com/web/ko/service/parking_user.do"
+          ]
+        ]
+      ],
+      [
+        "선수 가이드",
+        "레이스 당일에 알아야 할 내용이 모두 담긴 공식 가이드예요. 미리 읽어 두세요.",
+        [
+          [
+            "선수 가이드 PDF",
+            "https://hyroxsouthkorea.com/wp-content/uploads/2026/11/SEOUL-UPDATES_2026-HYROX-EVENT-GUIDE-1.pdf"
+          ]
+        ]
+      ],
+      [
+        "티켓 활성화",
+        "11월 11일(수) 오후 6시까지 티켓에 개인정보를 넣어 활성화하지 않으면 출발 시간이 배정되지 않아요.",
+        [
+          [
+            "활성화 안내",
+            "https://hyroxapac.zendesk.com/hc/en-us/articles/9888239184655"
+          ]
+        ]
+      ],
+      [
+        "선수 체크인",
+        "2층 Hall 7A 앞 선수 등록 구역. 사전 체크인을 안 했으면 시간이 더 걸리니 여유 있게 가세요.",
+        [
+          [
+            "체크인 일정",
+            "https://docs.google.com/forms/d/e/1FAIpQLSevcHPcHCPv8y-nRlo_ApnpenOcKm60vtdgH_N7iUmh7y4Miw/viewform"
+          ]
+        ]
+      ],
+      [
+        "FLEX 옵션",
+        "현장에서는 선수 변경, 출발 시간 변경을 포함해 어떤 변경도 안 돼요.",
+        [
+          [
+            "FAQ",
+            "https://hyroxsouthkorea.com/ko/faq/"
+          ]
+        ]
+      ],
+      [
+        "테크니컬 브리핑 (필수)",
+        "레이스 규정 등 중요한 안내가 담긴 영상이에요. 모든 선수가 레이스 전에 꼭 봐야 해요.",
+        [
+          [
+            "싱글",
+            "https://www.youtube.com/watch?v=XVKgRC2w2lA"
+          ],
+          [
+            "더블",
+            "https://www.youtube.com/watch?v=cGKVL2Su5-k"
+          ],
+          [
+            "릴레이",
+            "https://www.youtube.com/watch?v=FLXgg_K9rNo"
+          ]
+        ]
+      ],
+      [
+        "룰북",
+        "2026/27 시즌 룰북이 새로 나왔어요. 페널티를 받지 않도록 내 디비전 규정을 확인하세요.",
+        [
+          [
+            "선수 룰북",
+            "https://hyroxsouthkorea.com/ko/rulebooks/"
+          ]
+        ]
+      ],
+      [
+        "경기장 프리뷰 라이브",
+        "11월 12일(목) 오후 7시, 인스타그램 라이브로 경기장을 미리 보여줘요. 어댑티브 디비전은 오후 6시 헬프 데스크에서 현장 투어가 있어요.",
+        [
+          [
+            "@hyroxkor",
+            "https://www.instagram.com/hyroxkor/"
+          ]
+        ]
+      ],
+      [
+        "런 안내 영상",
+        "디비전별 런 동선 안내 (유튜브).",
+        [
+          [
+            "싱글/더블",
+            "https://youtu.be/2qJLPoxXB08"
+          ],
+          [
+            "릴레이",
+            "https://youtu.be/rUEF0lUw7MM"
+          ]
+        ]
+      ],
+      [
+        "문의",
+        "티켓 관련 문의는 고객 지원팀으로.",
+        [
+          [
+            "FAQ",
+            "https://hyroxsouthkorea.com/ko/faq/"
+          ],
+          [
+            "고객 지원팀",
+            "https://hyroxsouthkorea.com/ko/contact/"
+          ]
+        ]
+      ]
+    ]
+  },
   "schedule": {
     "source": "https://www.instagram.com/hyroxkor/p/Dfi8ftAnU0G/",
     "image": "assets/start-time-awards.jpg",
@@ -287,6 +412,16 @@
       "label": "Start List",
       "desc": "개인별 출발 시간 조회",
       "url": "https://startlist.hyrox.com/"
+    },
+    {
+      "label": "Event Guide",
+      "desc": "공식 선수 가이드 PDF",
+      "url": "https://hyroxsouthkorea.com/wp-content/uploads/2026/11/SEOUL-UPDATES_2026-HYROX-EVENT-GUIDE-1.pdf"
+    },
+    {
+      "label": "Rulebook",
+      "desc": "2026/27 시즌 선수 룰북",
+      "url": "https://hyroxsouthkorea.com/ko/rulebooks/"
     },
     {
       "label": "Results",
